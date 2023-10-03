@@ -1,0 +1,23 @@
+# Configuration for issue templates chooser screen
+
+# This description will appear as a primary card on the template chooser screen.
+blank_issues_enabled: true  # Enables the option to open blank issues, set to false to disable
+contact_links:
+  - name: Contribution Guidelines
+    url: https://github.com/THD-AI-2023/.github/blob/main/CONTRIBUTING.md
+    about: Please review our contribution guidelines before submitting an issue.
+  - name: GitHub Guide for Beginners
+    url: https://github.com/THD-AI-2023/GitHub-Guide-for-Beginners
+    about: Are you new to GitHub? Check out our beginner's guide.
+
+# Issue templates defined in the ISSUE_TEMPLATE directory
+issue_templates:
+  - name: Task or Improvement
+    description: Define a task, an assignment, or suggest an improvement.
+    template: task_template.md
+  - name: General Question or Concern
+    description: Have a general question or concern? Use this template.
+    template: general_issue.md
+  - name: Community Improvement
+    description: Suggest improvements to the THD-AI-2023 community.
+    template: community_improvement.md
