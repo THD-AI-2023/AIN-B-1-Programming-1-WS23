@@ -4,8 +4,8 @@
 - Processing is both a software and a language that focuses on visual arts, making it an excellent tool for teaching coding to beginners.
 - Installation of Processing is straightforward and available for all major platforms.
 
-## **2. Getting Familiar with the Processing Development Environment (PDE):**
-- The PDE consists of a simple text editor, console, and other tools.
+## **2. Getting Familiar with the Processing Integrated Development Environment (IDE):**
+- The Processing IDE consists of a simple text editor, console, and other tools.
 - Programs written in Processing are called "sketches" and stored in a sketchbook directory.
 
 ## **3. Starting with Basics - "Hello World" Program:**
