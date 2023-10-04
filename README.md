@@ -1,8 +1,6 @@
 # Programming 1 (WS23)
 Materials, notes, and resources related to the Programming 1 course for the Bachelor of Artificial Intelligence program in the Winter Semester of 2023.
 
-Sure, here's a formatted section for your README:
-
 ### Programming I - Lecture Details
 
 - **Schedule**: Every Wednesday from October 4, 2023, to January 24, 2024.
@@ -14,6 +12,8 @@ Sure, here's a formatted section for your README:
   - **Lecture**: 9.45 - 11.15 AM in room K106/107 (Hybrid)
   - **Exercise 1**: 11.30 AM - 1.00 PM in room K106/107 (Hybrid)
   - **Exercise 2**: 2.00 - 3.30 PM (Online only)
+
+- **Lecture Material**: Find lecture notes 00, 01 in [Lecture Material](https://github.com/THD-AI-2023/AIN-B-1-Programming-1-WS23/tree/main/Lecture%20Material) folder.
 
 #### Online Access
 For those attending virtually, please note the details below:
