@@ -14,6 +14,10 @@ Materials, notes, and resources related to the Programming 1 course for the Bach
   - **Exercise 2**: 2.00 - 3.30 PM (Online only)
 
 - **Lecture Material**: Find lecture notes 00, 01 in [Lecture Material](https://github.com/THD-AI-2023/AIN-B-1-Programming-1-WS23/tree/main/Lecture%20Material) folder.
+- **Questions**:
+  - **Professor**: Go to iLearn: ![image](https://github.com/THD-AI-2023/AIN-B-1-Programming-1-WS23/assets/66517969/119b7af1-9b1d-439b-acd5-1b1c21ce27d4)
+  - **Moderator**: Any questions on this organization or the repo, create an issue and ping @HlexNC
+
 
 #### Online Access
 For those attending virtually, please note the details below:
