@@ -1,1 +1,0 @@
-print("Hello World, welcome to THD-AI!")
