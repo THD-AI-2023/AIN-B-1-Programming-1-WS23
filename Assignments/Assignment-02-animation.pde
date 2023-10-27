@@ -75,6 +75,7 @@ void startingPoint() {
     triangleY = (int) random(i, j);
 }
 
+// Move the shape
 int move(int position, int speed, int max)
 {
     if (position != 0) {
