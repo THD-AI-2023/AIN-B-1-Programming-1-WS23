@@ -23,10 +23,17 @@ int obstacleSpeed = 5;
 boolean gameOver = false;
 boolean gameStarted = false;
 
+// Physics variables
+int gravity = 2;
+int jumpPower = 20;
+int maxJumpHeight = 100;
+
 // Setup the environment
 void setup() {
     println("Game setup!");
     size(640, 480);
+    ballX = 100;
+    ballY = height - ballSize;
     resetGame();
 }
 
@@ -46,25 +53,39 @@ void draw() {
 // Handle key presses
 void keyPressed() {
     println("Key pressed: " + key);
-    if (key == ' ' || key == 'r') {
-        if (gameOver) {
-            resetGame();
-        } else if (!gameStarted) {
+    if (key == ' ') {
+        if (!gameStarted) {
             startGame();
-        } else {
-            // TODO: Jump logic
+        } else if (!isJump && !gameOver) {
+            isJump = true;
+        } else if (gameOver) {
+            resetGame();
         }
     }
 }
 
 // Function to draw the ball
 void drawBall() {
-    // TODO: Draw the ball
+    println("Drawing ball at: " + ballX + ", " + ballY);
+    fill(0);
+    ellipse(ballX, ballY - jumpHeight, ballSize, ballSize);
 }
 
 // Function to update the ball's position
 void updateBall() {
-    // TODO: Update the ball's position
+    println("Updating ball position");
+    if (isJump) {
+        jumpHeight += jumpPower;
+        jumpPower -= gravity;
+
+        // Check if the ball has reached it's max jump height or hit the ground
+        if (jumpHeight <= 0) {
+            jumpHeight = 0;
+            isJump = false;
+            jumpPower = 20;
+        }
+    }
+    drawBall();
 }
 
 // Function to draw the obstacle
@@ -90,9 +111,13 @@ boolean checkCollision() {
 
 // Function to start the game
 void updateGame() {
-    // TODO: Game update logic
-    // This will include updating the ball, obstacles, and score
+    updateBall(); // Update the ball's position and jumping logic
+
+    // TODO: Update obstacles
+    // TODO: Check for collisions
+    // TODO: Update the score
 }
+
 
 // Function to start the game
 void displayStartScreen() {
