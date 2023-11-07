@@ -66,7 +66,6 @@ void keyPressed() {
 
 // Function to draw the ball
 void drawBall() {
-    println("Drawing ball at: " + ballX + ", " + ballY);
     fill(0);
     ellipse(ballX, ballY - jumpHeight, ballSize, ballSize);
 }
@@ -90,12 +89,21 @@ void updateBall() {
 
 // Function to draw the obstacle
 void drawObstacle() {
-    // TODO: Draw the obstacle
+    fill(50);
+    rect(obstacleX, obstacleY, obstacleWidth, obstacleHeight);
 }
 
 // Function to update the obstacle's position
 void updateObstacle() {
-    // TODO: Update the obstacle's position
+    println("Updating obstacle position");
+    obstacleX -= obstacleSpeed;
+    if (obstacleX + obstacleWidth < 0) {
+        obstacleX = width;
+        obstacleWidth = 20;
+        obstacleHeight = (int) random(50, 80);
+        obstacleY = height - obstacleHeight;
+    }
+    drawObstacle();
 }
 
 // Function to update the score
@@ -111,9 +119,9 @@ boolean checkCollision() {
 
 // Function to start the game
 void updateGame() {
-    updateBall(); // Update the ball's position and jumping logic
+    updateBall();
+    updateObstacle();
 
-    // TODO: Update obstacles
     // TODO: Check for collisions
     // TODO: Update the score
 }
@@ -136,6 +144,10 @@ void resetGame() {
     gameOver = false;
     score = 0;
     obstacleSpeed = 5;
+    obstacleX = width;
+    obstacleWidth = 30;
+    obstacleHeight = 40;
+    obstacleY = height - obstacleHeight;
     // TODO: Reset other necessary variables
 }
 
