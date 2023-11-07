@@ -108,7 +108,21 @@ void updateObstacle() {
 
 // Function to update the score
 void updateScore() {
-    // TODO: Update the score
+    // Update the score
+    if (gameStarted && !gameOver) {
+        score++;
+    }
+
+    // Update the high score
+    if (score > highScore) {
+        highScore = score;
+    }
+
+    // Display the score
+    fill(0);
+    textSize(20);
+    text("Score: " + score, 10, 20);
+    text("High Score: " + highScore, 10, 40);
 }
 
 // Function to check if the ball collided with the obstacle
@@ -140,7 +154,7 @@ void updateGame() {
         gameStarted = false;
     }
 
-    // TODO: Update the score
+    updateScore();
 }
 
 
@@ -165,7 +179,7 @@ void resetGame() {
     obstacleWidth = 30;
     obstacleHeight = 40;
     obstacleY = height - obstacleHeight;
-    // TODO: Reset other necessary variables
+    score = 0;
 }
 
 // Function to start the game
