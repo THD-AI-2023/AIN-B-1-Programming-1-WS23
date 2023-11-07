@@ -176,8 +176,10 @@ void displayGameOverScreen() {
     textSize(20);
     textAlign(CENTER);
     text("Game Over!", width / 2, height / 2 - 30);
-    text("Score: " + score, width / 2, height / 2);
     text("Press SPACE to Restart", width / 2, height / 2 + 30);
+
+    textSize(16);
+    text("Score: " + score, width / 2, height / 2);
 }
 
 
@@ -188,11 +190,18 @@ void resetGame() {
     gameOver = false;
     score = 0;
     obstacleSpeed = 5;
+
+    // Reset the obstacle position to start off the screen to the right
     obstacleX = width;
-    obstacleWidth = 30;
+    obstacleWidth = 20;
     obstacleHeight = 40;
     obstacleY = height - obstacleHeight;
     score = 0;
+
+    // Reset the ball's jump state
+    isJump = false;
+    jumpHeight = 0;
+    jumpPower = 20;
 }
 
 // Function to start the game
@@ -200,5 +209,4 @@ void startGame() {
     println("Game started!");
     gameStarted = true;
     gameOver = false;
-    // TODO: Initialize variables needed to start the game
 }
