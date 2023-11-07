@@ -54,12 +54,14 @@ void draw() {
 // Handle key presses
 void keyPressed() {
     if (key == ' ') {
-        if (!gameStarted) {
+        if (!gameStarted && !gameOver) {
             startGame();
         } else if (!isJump && !gameOver) {
             isJump = true;
         } else if (gameOver) {
             resetGame();
+            startGame();
+            println("Game Over Reset!");
         }
     }
 }
@@ -184,7 +186,6 @@ void displayGameOverScreen() {
 
     textSize(16);
     text("Score: " + score, width / 2, height / 2);
-    resetGame();
 }
 
 
