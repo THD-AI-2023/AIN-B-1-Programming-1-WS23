@@ -25,8 +25,9 @@ boolean gameStarted = false;
 
 // Setup the environment
 void setup() {
+    println("Game setup!");
     size(640, 480);
-    // TODO: Initialize game variables
+    resetGame();
 }
 
 // Draw the game
@@ -34,17 +35,26 @@ void draw() {
     background(255);
 
     if (gameStarted) {
-        // TODO: Game logic when running
+        updateGame();
     } else if (gameOver) {
-        // TODO: Game Over screen logic
+        displayGameOverScreen();
     } else {
-        // TODO: Start screen logic
+        displayStartScreen();
     }
 }
 
 // Handle key presses
 void keyPressed() {
-    // TODO: Handle key press for jump and game restart
+    println("Key pressed: " + key);
+    if (key == ' ' || key == 'r') {
+        if (gameOver) {
+            resetGame();
+        } else if (!gameStarted) {
+            startGame();
+        } else {
+            // TODO: Jump logic
+        }
+    }
 }
 
 // Function to draw the ball
@@ -78,7 +88,36 @@ boolean checkCollision() {
     return false;
 }
 
+// Function to start the game
+void updateGame() {
+    // TODO: Game update logic
+    // This will include updating the ball, obstacles, and score
+}
+
+// Function to start the game
+void displayStartScreen() {
+    // TODO: Display start screen elements (text, instructions, etc.)
+}
+
+// Function to display the game over screen
+void displayGameOverScreen() {
+    // TODO: Display game over screen elements (score, restart instructions, etc.)
+}
+
 // Function to reset the game
 void resetGame() {
-    // TODO: Reset the game
+    println("Game reset!");
+    gameStarted = false;
+    gameOver = false;
+    score = 0;
+    obstacleSpeed = 5;
+    // TODO: Reset other necessary variables
+}
+
+// Function to start the game
+void startGame() {
+    println("Game started!");
+    gameStarted = true;
+    gameOver = false;
+    // TODO: Initialize variables needed to start the game
 }
