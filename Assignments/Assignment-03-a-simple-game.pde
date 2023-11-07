@@ -54,15 +54,25 @@ void draw() {
 // Handle key presses
 void keyPressed() {
     if (key == ' ') {
-        if (!gameStarted && !gameOver) {
-            startGame();
-        } else if (!isJump && !gameOver) {
-            isJump = true;
-        } else if (gameOver) {
-            resetGame();
-            startGame();
-            println("Game Over Reset!");
-        }
+        handleInput();
+    }
+}
+
+// Handle mouse presses
+void mousePressed() {
+    handleInput();
+}
+
+// Function to handle input (both key and mouse)
+void handleInput() {
+    if (!gameStarted && !gameOver) {
+        startGame();
+    } else if (!isJump && !gameOver) {
+        isJump = true;
+    } else if (gameOver) {
+        resetGame();
+        startGame();
+        println("Game Over Reset!");
     }
 }
 
@@ -158,6 +168,9 @@ void updateGame() {
     if (checkCollision()) {
         gameOver = true;
         gameStarted = false;
+
+        println("Score: " + score);
+        println("High Score: " + highScore);
     }
 
     updateScore();
