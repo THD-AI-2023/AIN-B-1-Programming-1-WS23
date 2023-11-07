@@ -113,7 +113,20 @@ void updateScore() {
 
 // Function to check if the ball collided with the obstacle
 boolean checkCollision() {
-    // TODO: Check if the ball collided with the obstacle
+    // Calculate the closest point to the ball on the obstacle
+    int closestX = constrain(ballX, obstacleX, obstacleX + obstacleWidth);
+    int closestY = constrain(ballY - jumpHeight, obstacleY, obstacleY + obstacleHeight);
+
+    // Calculate the distance between the ball's center and this closest point
+    int distanceX = ballX - closestX;
+    int distanceY = (ballY - jumpHeight) - closestY;
+
+    // Detect collision if the distance is less than the ball's radius
+    int radius = ballSize / 2;
+    if (distanceX * distanceX + distanceY * distanceY < radius * radius) {
+        return true;
+    }
+
     return false;
 }
 
@@ -122,7 +135,11 @@ void updateGame() {
     updateBall();
     updateObstacle();
 
-    // TODO: Check for collisions
+    if (checkCollision()) {
+        gameOver = true;
+        gameStarted = false;
+    }
+
     // TODO: Update the score
 }
 
