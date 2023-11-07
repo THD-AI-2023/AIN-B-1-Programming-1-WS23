@@ -160,13 +160,26 @@ void updateGame() {
 
 // Function to start the game
 void displayStartScreen() {
-    // TODO: Display start screen elements (text, instructions, etc.)
+    fill(0);
+    textSize(20);
+    textAlign(CENTER);
+    text("Press SPACE to Start", width / 2, height / 2);
+
+    textSize(16);
+    text("High Score: " + highScore, width / 2, height / 2 + 30);
 }
+
 
 // Function to display the game over screen
 void displayGameOverScreen() {
-    // TODO: Display game over screen elements (score, restart instructions, etc.)
+    fill(0);
+    textSize(20);
+    textAlign(CENTER);
+    text("Game Over!", width / 2, height / 2 - 30);
+    text("Score: " + score, width / 2, height / 2);
+    text("Press SPACE to Restart", width / 2, height / 2 + 30);
 }
+
 
 // Function to reset the game
 void resetGame() {
