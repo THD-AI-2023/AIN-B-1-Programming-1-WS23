@@ -125,8 +125,8 @@ void updateScore() {
     // Display the score
     fill(0);
     textSize(20);
-    text("Score: " + score, 10, 20);
-    text("High Score: " + highScore, 10, 40);
+    text("Score: " + score, 60, 20);
+    text("High Score: " + highScore, 80, 40);
 }
 
 // Function to check if the ball collided with the obstacle
