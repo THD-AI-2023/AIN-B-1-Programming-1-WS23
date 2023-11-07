@@ -180,6 +180,7 @@ void displayGameOverScreen() {
 
     textSize(16);
     text("Score: " + score, width / 2, height / 2);
+    resetGame();
 }
 
 
