@@ -52,7 +52,6 @@ void draw() {
 
 // Handle key presses
 void keyPressed() {
-    println("Key pressed: " + key);
     if (key == ' ') {
         if (!gameStarted) {
             startGame();
@@ -72,7 +71,6 @@ void drawBall() {
 
 // Function to update the ball's position
 void updateBall() {
-    println("Updating ball position");
     if (isJump) {
         jumpHeight += jumpPower;
         jumpPower -= gravity;
@@ -95,7 +93,6 @@ void drawObstacle() {
 
 // Function to update the obstacle's position
 void updateObstacle() {
-    println("Updating obstacle position");
     obstacleX -= obstacleSpeed;
     if (obstacleX + obstacleWidth < 0) {
         obstacleX = width;
