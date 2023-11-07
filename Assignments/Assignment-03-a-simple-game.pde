@@ -18,6 +18,7 @@ int highScore = 0;
 int obstacleX, obstacleY;
 int obstacleWidth, obstacleHeight;
 int obstacleSpeed = 5;
+int initialObstacleSpeed = 5;
 
 // Game State variables
 boolean gameOver = false;
@@ -99,8 +100,14 @@ void updateObstacle() {
         obstacleWidth = 20;
         obstacleHeight = (int) random(50, 80);
         obstacleY = height - obstacleHeight;
+        updateObstacleSpeed();
     }
     drawObstacle();
+}
+
+// Function to update the obstacle's speed
+void updateObstacleSpeed() {
+    obstacleSpeed = initialObstacleSpeed + score / 1000;
 }
 
 // Function to update the score
@@ -194,7 +201,7 @@ void resetGame() {
     obstacleWidth = 20;
     obstacleHeight = 40;
     obstacleY = height - obstacleHeight;
-    score = 0;
+    obstacleSpeed = initialObstacleSpeed;
 
     // Reset the ball's jump state
     isJump = false;
