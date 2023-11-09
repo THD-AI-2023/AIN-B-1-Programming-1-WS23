@@ -27,5 +27,3 @@ For those attending virtually, please note the details below:
 - **Zoom ID**: 65492104246
 
 For more details, refer to the [iLearn](https://ilearn.th-deg.de/course/view.php?id=17884) platform.
-
-![Alt](https://repobeats.axiom.co/api/embed/720f5e0e164934dd20f5fd15af0a8100ceeb3d00.svg "Repobeats analytics image")
