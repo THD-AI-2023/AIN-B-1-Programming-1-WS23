@@ -5,6 +5,8 @@
 // Docs: https://processing.org/tutorials/gettingstarted
 
 // Global variables
+int centerX, centerY;
+float hourTickAngle;
 float fastNeedleAngle = 0;
 float slowNeedleAngle = 0;
 float fastNeedleSpeed = 0.015;
@@ -12,8 +14,14 @@ float slowNeedleSpeed = 0.001;
 int fastNeedleLength, slowNeedleLength;
 
 void setup() {
-  size(640, 480);
+    size(640, 480);
+    centerX = width / 2;
+    centerY = height / 2;
+    hourTickAngle = TWO_PI / 12;
+    fastNeedleLength = 150;
+    slowNeedleLength = 100;
 }
+println(TWO_PI)
 
 void draw() {
     background(255);
@@ -22,11 +30,8 @@ void draw() {
     drawNeedles();
 }
 
+// Draw the clock ticks
 void drawClock() {
-    int centerX = width / 2;
-    int centerY = height / 2;
-    float hourTickAngle = TWO_PI / 12;
-  
     stroke(0);
     for (int i = 0; i < 12; i++) {
         float angle = i * hourTickAngle;
@@ -34,7 +39,7 @@ void drawClock() {
         float y0 = centerY + sin(angle) * 180;
         float x1 = centerX + cos(angle) * 200;
         float y1 = centerY + sin(angle) * 200;
-        line(x0, y0, x1, y1);
+    line(x0, y0, x1, y1);
     }
 }
 
@@ -60,5 +65,6 @@ void mousePressed() {
 
 // Update the needle length and speed on mouse move
 void mouseMoved() {
-    // TODO: Update the needle length and speed
+    fastNeedleLength = int(map(mouseX, 0, width, 100, 200));
+    slowNeedleSpeed = map(mouseY, 0, height, 0.001, 0.01);
 }
