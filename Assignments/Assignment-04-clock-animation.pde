@@ -21,7 +21,6 @@ void setup() {
     fastNeedleLength = 150;
     slowNeedleLength = 100;
 }
-println(TWO_PI)
 
 void draw() {
     background(255);
