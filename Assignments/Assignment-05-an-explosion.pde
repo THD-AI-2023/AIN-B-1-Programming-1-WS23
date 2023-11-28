@@ -24,30 +24,36 @@ void draw() {
     }
 }
 
+// Create an explosion on mouse pressed
 void mousePressed() {
     resetExplosion();
     createParticle(mouseX, mouseY, 50);
 }
 
+// Save the frame on mouse released
 void mouseReleased() {
     saveFrame("task_5_explosion.tif");
 }
 
+// Reset the explosion
 void resetExplosion() {
     particles.clear();
 }
 
+// Create a particle
 void createParticle(float x, float y, int count) {
     for (int i = 0; i < count; i++) {
         particles.add(new Particle(x, y));
     }
 }
 
+// Particle class
 class Particle {
     float x, y;
     float size;
     float velocityX, velocityY;
 
+    // Constructor
     Particle(float x, float y) {
         this.x = x;
         this.y = y;
@@ -56,6 +62,7 @@ class Particle {
         this.velocityY = random(-5, 5);
     }
 
+    // Update the particle
     void update() {
         x += velocityX;
         y += velocityY;
@@ -63,6 +70,7 @@ class Particle {
         size = min(size, maxParticleSize);
     }
 
+    // Display the particle
     void display() {
         ellipse(x, y, size, size);
     }
