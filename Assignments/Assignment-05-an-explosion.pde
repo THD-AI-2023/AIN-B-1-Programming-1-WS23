@@ -65,17 +65,26 @@ void createParticle(float x, float y, int count) {
 }
 
 class Particle {
-    // TODO: Define class variables here
+    float x, y;
+    float size;
+    float velocityX, velocityY;
 
-    Particle() {
-        // TODO: Add your constructor code here
+    Particle(float x, float y) {
+        this.x = x;
+        this.y = y;
+        this.size = random(5, maxParticleSize);
+        this.velocityX = random(-5, 5);
+        this.velocityY = random(-5, 5);
     }
 
     void update() {
-        // TODO: Add your update code here
+        x += velocityX;
+        y += velocityY;
+        size += 0.1;
+        size = min(size, maxParticleSize);
     }
 
     void display() {
-        // TODO: Add your display code here
+        ellipse(x, y, size, size);
     }
 }
