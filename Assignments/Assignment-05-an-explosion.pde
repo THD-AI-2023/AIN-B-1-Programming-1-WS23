@@ -1,29 +1,8 @@
-// # Task 5: An Explosion
-
-// ## Overview
-// Write a Processing sketch that demonstrates a simple explosion effect based on the guidelines and conditions specified below.
-
-// ## Conditions
-// - **Drawing Area**: The size of the drawing area is 640x480px.
-// - **Initial State**: Initially, the drawing area is blank, either a homogeneous color or with a simple background drawing.
-// - **Explosion Trigger**: On mouse click, a large number of simple shapes (preferably circles) appear at the mouse tip.
-// - **Shape Behavior**: The shapes fly out in random directions from the mouse tip.
-// - **Size Increase**: As long as the mouse is pressed, the shapes gradually increase in size until they reach a predetermined maximum size.
-// - **Post-Release**: Once the mouse is released, the shapes maintain their size and continue their trajectory.
-// - **Screenshot**: A screenshot is saved when the mouse is released.
-// - **Shape Exit**: The shapes are allowed to leave the drawing area without border handling.
-// - **Reset Mechanism**: Clicking the mouse again resets the explosion, clearing any shapes from the previous explosion.
-
-// ## Additional Instructions
-// - **Comments**: Properly comment your sketch (refer to `02_Comments_Variables.pdf` for guidelines).
-// - **Code Style**: Follow the established code style rules for exercise performance (details in `05_CodeStyle_Debugging.pdf`).
-// - **File Naming**: Name your Processing sketch `task_5_explosion.pde` and the screenshot/image `task_5_explosion.tif`.
-// - **Submission**: Submit your sketch (.pde) and image (.tif) via iLearn.
-// - **Due Date**: `Tuesday, 2023-11-28, 23:00`.
-
-// Instructor: Markus Mayer  
-// Contact: markus.mayer@th-deg.de  
-// Date: November 14, 2023
+// Task 5: An Explosion
+// Description: Create an explosion of particles when the mouse is pressed.
+// Author: Alex Rudaev
+// Date: 28/11/2023
+// References: https://github.com/THD-AI-2023/AIN-B-1-Programming-1-WS23/issues/15
 
 
 // Global variables
