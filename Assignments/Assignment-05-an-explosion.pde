@@ -27,23 +27,41 @@
 
 
 // Global variables
-// TODO: Add your global variables here
+ArrayList<Particle> particles;
+float maxParticleSize = 20;
 
 void setup() {
     size(640, 480);
     background(255);
+    particles = new ArrayList<Particle>();
 }
 
 void draw() {
-    // TODO: Add your drawing code here
+    background(255);
+    for (int i = 0; i < particles.size(); i++) {
+        Particle p = particles.get(i);
+        p.update();
+        p.display();
+    }
 }
 
 void mousePressed() {
-    // TODO: Add your mouse pressed code here
+    resetExplosion();
+    createParticle(mouseX, mouseY, 50);
 }
 
 void mouseReleased() {
-    // TODO: Add your mouse released code here
+    saveFrame("task_5_explosion.tif");
+}
+
+void resetExplosion() {
+    particles.clear();
+}
+
+void createParticle(float x, float y, int count) {
+    for (int i = 0; i < count; i++) {
+        particles.add(new Particle(x, y));
+    }
 }
 
 class Particle {
